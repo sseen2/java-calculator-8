@@ -2,6 +2,7 @@ package calculator;
 
 import calculator.view.ApplicationInput;
 import calculator.view.ApplicationOutput;
+import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class Application {
         Delimit delimit = new Delimit(input);
         String numberInput = delimit.getNumberInput(input);
 
-        String[] numbers = splitter.splitString(numberInput, delimit.getDelimiter());
+        List<String> numbers = splitter.splitString(numberInput, delimit.getDelimiter());
 
         outputView.printResult(calculator.calculate(numbers));
     }
