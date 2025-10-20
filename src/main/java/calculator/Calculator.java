@@ -1,10 +1,8 @@
 package calculator;
 
-import java.util.List;
-
 public class Calculator {
 
-    public long calculate(List<String> numbers) {
+    public long calculate(String[] numbers) {
         long result = 0;
 
         for (String number : numbers) {
