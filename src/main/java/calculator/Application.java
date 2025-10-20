@@ -1,19 +1,23 @@
 package calculator;
 
+import calculator.view.ApplicationInput;
+import calculator.view.ApplicationOutput;
+
 public class Application {
     public static void main(String[] args) {
-        View view = new View();
-
-        view.printStart();
-        String input = view.inputString();
-
-        Delimit delimit = new Delimit(input);
-        String numberInput = delimit.getNumberInput(input);
-
+        ApplicationInput input = new ApplicationInput();
+        ApplicationOutput output = new ApplicationOutput();
         Splitter splitter = new Splitter();
-        String[] numbers = splitter.splitString(numberInput, delimit.delimiter());
-
         Calculator calculator = new Calculator();
-        view.printResult(calculator.calculate(numbers));
+
+        output.printStart();
+        String inputString = input.inputString();
+
+        Delimit delimit = new Delimit(inputString);
+        String numberInput = delimit.getNumberInput(inputString);
+
+        String[] numbers = splitter.splitString(numberInput, delimit.getDelimiter());
+
+        output.printResult(calculator.calculate(numbers));
     }
 }
