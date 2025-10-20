@@ -9,10 +9,10 @@ public class Delimit {
     private final String delimiter;
 
     public Delimit(String input) {
-        this.delimiter = addDelimiter(input);
+        this.delimiter = initDelimiter(input);
     }
 
-    private String addDelimiter(String input) {
+    private String initDelimiter(String input) {
         String delimiter = DEFAULT_DELIMITER;
         delimiter += customDelimiter(input);
         return delimiter;
