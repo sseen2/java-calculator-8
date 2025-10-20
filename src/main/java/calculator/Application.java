@@ -7,6 +7,8 @@ public class Application {
         view.printStart();
         String input = view.inputString();
 
+        Delimit delimit = new Delimit(input);
+
         // TODO: 구분자로 구분
 
         // TODO: 덧셈 결과 출력
