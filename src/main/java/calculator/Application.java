@@ -9,7 +9,8 @@ public class Application {
 
         Delimit delimit = new Delimit(input);
 
-        // TODO: 구분자로 구분
+        Splitter splitter = new Splitter();
+        splitter.splitString(input, delimit.getDelimiter());
 
         // TODO: 덧셈 결과 출력
         view.printResult(0);
