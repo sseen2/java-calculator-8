@@ -10,7 +10,7 @@ public class Application {
         Delimit delimit = new Delimit(input);
 
         Splitter splitter = new Splitter();
-        splitter.splitString(input, delimit.getDelimiter());
+        splitter.splitString(input, delimit.delimiter());
 
         // TODO: 덧셈 결과 출력
         view.printResult(0);
