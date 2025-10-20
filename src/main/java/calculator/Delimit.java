@@ -33,4 +33,13 @@ public record Delimit(
             throw new IllegalArgumentException("커스텀 구분자 등록에 실패하였습니다.");
         }
     }
+
+    public String getNumberInput(String input) {
+        if (input.startsWith(CUSTOM_DELIMITER_START)) {
+            int end = input.indexOf(CUSTOM_DELIMITER_END) + 2;
+            return input.substring(end);
+        }
+
+        return input;
+    }
 }

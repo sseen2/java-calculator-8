@@ -8,9 +8,10 @@ public class Application {
         String input = view.inputString();
 
         Delimit delimit = new Delimit(input);
+        String numberInput = delimit.getNumberInput(input);
 
         Splitter splitter = new Splitter();
-        String[] numbers = splitter.splitString(input, delimit.delimiter());
+        String[] numbers = splitter.splitString(numberInput, delimit.delimiter());
 
         Calculator calculator = new Calculator();
         view.printResult(calculator.calculate(numbers));
