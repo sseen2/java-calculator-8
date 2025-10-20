@@ -31,7 +31,7 @@ public class Delimit {
 
     private void validCustomDelimiterEnd(int end) {
         if (end == -1) {
-            throw new IllegalArgumentException("커스텀 구분자가 잘못 입력되었습니다.");
+            throw new IllegalArgumentException("커스텀 구분자 등록에 실패하였습니다.");
         }
     }
 
