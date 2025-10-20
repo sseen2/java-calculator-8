@@ -1,14 +1,15 @@
 package calculator;
 
-public record Delimit(
-        String delimiter
-) {
+public class Delimit {
+
     private static final String DEFAULT_DELIMITER = ",|:";
     private static final String CUSTOM_DELIMITER_START = "//";
     private static final String CUSTOM_DELIMITER_END = "\\n";
 
-    public Delimit(String delimiter) {
-        this.delimiter = addDelimiter(delimiter);
+    private final String delimiter;
+
+    public Delimit(String input) {
+        this.delimiter = addDelimiter(input);
     }
 
     private String addDelimiter(String input) {
@@ -41,5 +42,9 @@ public record Delimit(
         }
 
         return input;
+    }
+
+    public String getDelimiter() {
+        return delimiter;
     }
 }
